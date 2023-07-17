@@ -6,6 +6,7 @@ import Final from './Final';
 function App() {
   return (
     <div className="App">
+      
      <Final />
     
     </div>

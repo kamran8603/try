@@ -20,4 +20,30 @@
     border: none;
     cursor: pointer;
   }
-  
+  .main-container{
+    width: 100%;
+    background-color: tomato;
+    height: 100px;
+    justify-content: flex-end;
+    border:2px solid black ;
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+    
+  }
+  .input_box{
+   width: 80%;
+   border:2px solid black ;
+  }
+  .input-btn{
+    
+    background-color: aqua;
+    height: 80px;
+    
+  }
+  .logo{
+    height:90px;
+  }
+  .logo{
+    mix-blend-mode: multiply;
+  }

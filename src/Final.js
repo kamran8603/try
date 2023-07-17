@@ -24,6 +24,28 @@ const getTopMovies = () => {
 };
 
 
+//Upcoming Content 
+
+const Upcoming = () => {
+  
+  const url = 'https://api.themoviedb.org/3/movie/upcoming?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3';
+  const options = {
+  method: 'GET',
+  headers: {
+  accept: 'application/json',
+  Authorization: "Bearer " + accessToken,
+  }
+};
+
+return fetch(url, options)
+  .then((res) => res.json())
+  .then((json)=> json);
+  
+}
+
+
+
+///genre movie collection
 const getMoviesByGenre = (genre) => {
   const url =
      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres="+genre;
@@ -56,11 +78,9 @@ const options = {
 };
 
  return fetch(url, options)
-  .then(res => res.json())
-  .then((json)=>json)
-
-}
-
+  .then((res) => res.json())
+  .then((json)=> json)
+};
 // For top rated movies
 
 const  topRatedMovies = ()=>{
@@ -134,6 +154,12 @@ function Final() {
   }
 
 
+  const upcomng =()=>{
+    Upcoming().then(response=>{
+    setData(response.results)
+   })
+  }
+
   useEffect(() => {
     getTopMovies().then((response) => {
       setData(response.results);
@@ -144,20 +170,34 @@ function Final() {
 
   return (
     <div className="main_container">
+      <Searchh className="nav-sec" onSearch={handleSearch} />
       <div className="header_part">
-        <img
+        {/* <img
           alt="logo"
           className="logo"
           src="https://img.freepik.com/premium-vector/search-movie-logo-template-design_20029-921.jpg?w=2000"
-        />
+        /> */}
 
-        <Searchh onSearch={handleSearch} />
+        
       </div>
       <div className="btn">
       <button className="button_latest" onClick={() => showMovies('16')}>Anime</button>
         <button className="button_latest" onClick={()=>latest()}>Latest</button>
-        <button onClick={()=>pop()}>popular</button>
+        <button className="button_latest" onClick={()=>pop()}>Popular</button>
+        <button className="button_latest" onClick={()=>upcomng()}>Upcoming Content</button>
       </div>
+
+
+
+      <div>
+      
+
+      </div>
+
+
+
+
+
       <div className="container">
         
         {data.map((item) => (
