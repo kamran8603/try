@@ -1,0 +1,61 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-image: url("https://img.freepik.com/free-photo/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background_1048-11333.jpg?size=626&ext=jpg&ga=GA1.1.106831816.1687323140&semt=ais"); */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: #ccc;
+  }
+  
+  .card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-rating {
+    margin: 5px 0;
+  }
+  
+  .card-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .card-link:hover {
+    text-decoration: underline;
+  }
+.search{
+    height:50px;
+    width:100%;
+} 
+.logo{
+    
+    width: 180px;
+} 
+.header_part{
+    display: flex;
+   
+}
